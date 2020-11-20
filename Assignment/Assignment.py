@@ -5,22 +5,39 @@
 # 3주차 20201113 코딩 진행중
 # 길이가 정해진 리스트를 선언하고 그 리스트 전체를 0으로 초기화 하는 방법을 몰라 헤맸습니다.
 # 리스트 만들기 참고 https://jobc.tistory.com/m/141, 리스트 값 바꾸기 참고 https://aenam00.tistory.com/51
+# 4주차  20201120 코딩 마무리 및 디버깅
+
 
 import sys
 #f = sys.stdin
-f = open('data.txt', 'r')
+#f = open('data.txt', 'r')
 
 I = 1
 W, Out = 0, 0
 Table = [0 for i in range(101)]
 
-N = int(input("손님 수를 입력해주세요(100이하): "))
+N = int(input("손님 수를 입력해주세요(1~100): "))
 
 while N > 100:
-    N = int(input("100이하로 입력해주세요: "))
+    N = int(input("1~100 사이를 입력해주세요: "))
+    while N < 1:
+        N = int(input("1~100 사이를 입력해주세요: "))
+
+while N < 1:
+    N = int(input("1~100 사이를 입력해주세요: "))
+    while N > 100:
+        N = int(input("1~100 사이를 입력해주세요: "))
 
 for I in range(0, N, 1):
-    W = int(input("원하는 자리를 입력해주세요(100이하): "))
+    W = int(input("원하는 자리를 입력해주세요(1~100): "))
+    while W > 100:
+        W = int(input("1~100 사이를 입력해주세요: "))
+        while W < 1:
+            W = int(input("1~100 사이를 입력해주세요: "))
+    while W < 1:
+        W = int(input("1~100 사이를 입력해주세요: "))
+        while W > 100:
+            W = int(input("1~100 사이를 입력해주세요: "))
     if Table[W] == 0:
         Table[W] = 1
     else:
